@@ -2,3 +2,9 @@
     margin:0px auto;
     padding:0px auto;
 }
+.jumbotron {
+    padding:70px 30px 70px 30px;
+    margin:0px auto;
+    background: #7986CB ;
+    color:floralwhite;
+}
