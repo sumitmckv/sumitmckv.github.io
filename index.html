@@ -22,8 +22,8 @@
     <div class="container" ng-controller= "aboutMe">
         <div class="row row-header">
             <div class="col-xs-12 col-sm-8">
-                <h1>{{ myself.name }} Hey</h1>
-                <p style="padding:40px;"></p>
+                <h1>{{ myself.name }}</h1>
+                <p style="padding:40px;">{{ myself.details }}</p>
                 
             </div>
             <div class="col-xs-12 col-sm-3">
@@ -41,18 +41,16 @@
 <script>
 	
 	var cvDoc = angular.module('myGithubCV', []);
-	cvDoc.controller('aboutMe', function () {
-		var description = "Hi it's sumit ghosh and i am a software developer."+
+	cvDoc.controller('aboutMe',['$scope', function ($scope) {
+		 var description = "Hi it's sumit ghosh and i am a software developer."+
 			  "I have done several projects in JAVA, GWT. Recently i started learning web development"+ 
 			  "and so far it's been a wonderful experience for me.";
-		this.description = description;
-		var myself =  {
-			name: 'Sumit Ghosh',
-			details: description,
-			photo: 'https://avatars1.githubusercontent.com/u/8362957?v=3&u=2966bcf519ae6fe4c9ffbe60a02a1875de949793&s=400'		
+		 $scope.myself =  {
+			'name': 'Sumit Ghosh',
+			'details': description,
+			'photo': 'https://avatars1.githubusercontent.com/u/8362957?v=3&u=2966bcf519ae6fe4c9ffbe60a02a1875de949793&s=400'		
 		};
-	this.myself = myself;	
-	});
+	}]);
 </script>
 </body>
 </html>
